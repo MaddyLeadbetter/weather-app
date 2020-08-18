@@ -1,0 +1,41 @@
+.forecast {
+    color: white;
+    font-size: calc(10px + 2vmin);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    margin: auto;
+    padding: 28px;
+    background: #1B2D3B;
+    border-radius: 8px;
+    border: solid 2px white;
+    margin-top: 28px;
+    min-height: 220px;
+}
+
+.info h1 {
+    margin: 0 0 10px 0;
+}
+
+.inner-info {
+    font-size: 18px;
+}
+
+.Partly-cloudy {
+    background-color: blue;
+}
+
+.Sunny {
+    background-color: yellow;
+}
+
+.Overcast {
+    background-color: grey;
+}
+
+.forecast-button {
+    padding: 4px;
+}

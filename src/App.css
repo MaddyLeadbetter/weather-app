@@ -19,11 +19,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
   min-height: 100vh;
-  padding: 48px;
-}
-
-.App-link {
-  color: #61dafb;
+  padding: 36px 48px;
 }
 
 @keyframes App-logo-spin {

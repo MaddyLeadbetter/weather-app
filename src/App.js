@@ -1,14 +1,12 @@
 import React from 'react';
-import logo from './sun.svg';
 import './App.css';
-import WeeklyWeatherComponent from './WeeklyWeather/WeeklyWeather';
+import WeatherComponent from './Components/Weather/Weather';
 
 function App() {
   return (
     <div className="App">
       <div className="body">
-        <img src={logo} className="App-logo" alt="logo" />
-        <WeeklyWeatherComponent />
+        <WeatherComponent />
       </div>
     </div>
   );
