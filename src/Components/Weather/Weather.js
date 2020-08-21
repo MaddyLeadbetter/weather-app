@@ -24,7 +24,6 @@ const WeatherComponent = () => {
         const selection = options.find(elem => elem.value === weatherData.location.name);
         return selection.label;
     }
-    console.log('forecast:', weatherData);
 
     const isDay = weatherData.current && (weatherData.current.is_day === 'yes');
 
@@ -32,7 +31,7 @@ const WeatherComponent = () => {
         if (!weatherData.current || !weatherData.current.weather_descriptions) return 'Cloudy';
         const conditions = weatherData.current.weather_descriptions.toString().toLowerCase();
         console.log('CONDITIONS!', conditions);
-        if (conditions.includes('cloudy')) return 'Cloudy';
+        if (conditions.includes('cloudy') || conditions.includes('rain')) return 'Cloudy';
         if (conditions.includes('sunny')) return 'Sunny';
         if (conditions.includes('haze') || conditions.includes('fog') || conditions.includes('smoke')) return 'Hazy';
     }
