@@ -1,0 +1,30 @@
+export const options = [
+    { value: 'San Francisco', label: 'Vaurum' },
+    { value: 'Yellowknife', label: 'Frosthall' },
+    { value: 'Honolulu', label: 'Midgulf' },
+    { value: 'Brantford', label: 'Dewspell' },
+    { value: 'Puerto Baquerizo Moreno', label: 'Galapga' },
+    { value: 'Winnipeg', label: 'Uslian' },
+    { value: 'Vancouver', label: 'Deepfort' },
+    { value: 'Tokyo', label: 'Faehills' },
+    { value: 'Calgary', label: 'Argenherst' },
+    { value: 'Moscow', label: 'Tiberalt' },
+    { value: 'Nuuk', label: 'Ice Helm' },
+    { value: 'Maui', label: 'Stormpost' },
+    { value: 'Texas City', label: 'Farford' },
+    { value: 'New Orleans', label: 'Amberharbour' },
+    { value: 'Buffalo', label: 'Harbrau' },
+    { value: 'Nassau', label: 'Archae' },
+    { value: 'Denver', label: 'Lastbreach' },
+]
+
+export const weatherOptions = [
+    'Smoke',
+    'Haze',
+    'Partly cloudy',
+    'Cloudy',
+    'Sunny',
+    'Fog',
+    'Patchy rain possible',
+    'Light Rain',
+]

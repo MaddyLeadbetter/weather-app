@@ -1,4 +1,8 @@
 .forecast {
+    font-size: calc(10px + 2vmin);
+    color: white;
+    min-height: 100vh;
+    padding: 36px 48px;
     color: white;
     font-size: calc(10px + 2vmin);
 }
@@ -24,18 +28,26 @@
     font-size: 18px;
 }
 
-.Partly-cloudy {
-    background-color: blue;
+.Cloudy.Day {
+    background-color: #416772;
 }
 
-.Sunny {
-    background-color: yellow;
+.Cloudy.Night {
+    background-color: #0D303D;
 }
 
-.Overcast {
-    background-color: grey;
+.Sunny.Day {
+    background-color: #63A5DB;
 }
 
-.forecast-button {
-    padding: 4px;
+.Sunny.Night {
+    background-color: #001B70;
+}
+
+.Hazy.Day {
+    background-color: #82989E;
+}
+
+.Hazy.Night {
+    background-color: #25292A;
 }

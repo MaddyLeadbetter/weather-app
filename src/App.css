@@ -13,15 +13,6 @@
   }
 }
 
-.body {
-  /* background-color: #ABDED1; */
-  background-color: #0D303D;
-  font-size: calc(10px + 2vmin);
-  color: white;
-  min-height: 100vh;
-  padding: 36px 48px;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

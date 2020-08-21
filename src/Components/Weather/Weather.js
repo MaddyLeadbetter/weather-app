@@ -1,29 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import './Weather.css';
 import { getForecast } from '../../utils/forecast-fetch';
 import Dropdown from '../Dropdown/Dropdown';
 import sunLogo from '../../sun.svg';
 import moonLogo from '../../moon.svg';
+import { options } from '../../constants';
+import './Weather.css';
 
-const options = [
-    { value: 'San Francisco', label: 'Vaurum' },
-    { value: 'Yellowknife', label: 'Frosthall' },
-    { value: 'Hawaii', label: 'Midgulf' },
-    { value: 'Brantford', label: 'Dewspell' },
-    { value: 'Galapagos', label: 'Galapga' },
-    { value: 'Winnipeg', label: 'Uslian' },
-    { value: 'Vancouver', label: 'Deepfort' },
-    { value: 'Tokyo', label: 'Faehills' },
-    { value: 'Calgary', label: 'Argenherst' },
-    { value: 'Moscow', label: 'Tiberalt' },
-    { value: 'Nuuk', label: 'Ice Helm' },
-    { value: 'Maui', label: 'Stormpost' },
-    { value: 'Texas', label: 'Farford' },
-    { value: 'New Orleans', label: 'Amberharbour' },
-    { value: 'Buffalo', label: 'Harbrau' },
-    { value: 'Bahamas', label: 'Archae' },
-    { value: 'Denver', label: 'Lastbreach' },
-]
 
 const WeatherComponent = () => {
     let [weatherData, setWeatherData] = useState({});
@@ -42,12 +24,22 @@ const WeatherComponent = () => {
         const selection = options.find(elem => elem.value === weatherData.location.name);
         return selection.label;
     }
+    console.log('forecast:', weatherData);
 
-    const getLogo = (weatherData.current && !weatherData.current.is_day) ? moonLogo : sunLogo;
+    const isDay = weatherData.current && (weatherData.current.is_day === 'yes');
+
+    const getCondition = () => {
+        if (!weatherData.current || !weatherData.current.weather_descriptions) return 'Cloudy';
+        const conditions = weatherData.current.weather_descriptions.toString().toLowerCase();
+        console.log('CONDITIONS!', conditions);
+        if (conditions.includes('cloudy')) return 'Cloudy';
+        if (conditions.includes('sunny')) return 'Sunny';
+        if (conditions.includes('haze') || conditions.includes('fog') || conditions.includes('smoke')) return 'Hazy';
+    }
 
     return (
-        <div className="forecast">
-        <img src={getLogo} className="App-logo" alt="logo" />
+        <div className={`forecast ${getCondition()} ${isDay ? 'Day' : 'Night'}`}>
+        <img src={isDay ? sunLogo : moonLogo} className="App-logo" alt="logo" />
             <Dropdown options={options} onChange={onChange}/>
             <div className="info">
                 <h1>{getLocation()}</h1>
